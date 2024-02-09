@@ -1,0 +1,44 @@
+/* Navbar styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* You can change the background color as needed */
+  padding: 10px 20px;
+  background-color: #91d3d6;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items ul li {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+/* Responsive design */
+ @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-items ul li {
+    display: block;
+    margin: 10px 0;
+  }
+} 
