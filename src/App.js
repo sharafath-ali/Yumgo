@@ -1,12 +1,13 @@
-import logo from "./logo.svg";
+import Body from "./Body";
 import "./App.css";
 import Header from "./Header";
+
 
 function App() {
   return (
     <div className="">
       <Header />
-      <div></div>
+      <Body />
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.Search {
+    padding: 10px;
+    color: brown;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}

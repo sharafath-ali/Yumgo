@@ -1,0 +1,16 @@
+.res-card {
+  border: 1px solid rgb(0, 0, 0);
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+}
+
+.res-card:hover {
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.res-logo {
+  width: 100%;
+  height: auto;
+}
