@@ -7,7 +7,7 @@ function Body() {
     <div>
       <div className="Search">search</div>
       <div className="res-container">
-        {[1, 2, 3, 4, 5, 8, 6, 90, 88, 9].map(() => {
+        {[1, 2, 3, 5, 8, 6, 90, 88, 9].map(() => {
           return <RestaurantCard />;
         })}
       </div>
