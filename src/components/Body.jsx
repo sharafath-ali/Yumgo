@@ -1,5 +1,5 @@
 import React from "react";
-import "./Body.css";
+import "../Body.css";
 import RestaurantCard from "./RestaurantCard";
 
 function Body() {

@@ -1,6 +1,6 @@
 import React from 'react'
-import './RestaurantCard.css'
-import yum from './yumgo.png'
+import '../RestaurantCard.css'
+import yum from '../utils/Assets/yumgo.png'
 function RestaurantCard() {
   return (
     <div className='res-card'>
