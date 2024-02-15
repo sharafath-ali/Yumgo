@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Body.css";
 import RestaurantCard from "./RestaurantCard";
 
 function Body() {
+  useEffect(() => {
+    const fetch2 = async () => {
+      const Data = (
+        await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0153848&lng=76.3420206&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        )
+      ).json();
+      console.log(Data);
+    };
+    fetch2();
+  }, []);
+  
   return (
     <div>
       <div className="Search">search</div>
