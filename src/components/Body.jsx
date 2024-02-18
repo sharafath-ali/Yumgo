@@ -10,7 +10,6 @@ function Body() {
           "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0153848&lng=76.3420206&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         )
       ).json();
-      console.log(Data);
     };
     fetch2();
   }, []);
