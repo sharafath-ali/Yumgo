@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import "../Body.css";
 import RestaurantCard from "./RestaurantCard";
+import ShimmerUi from "./ShimmerUi";
+
 
 function Body() {
+  const [resCardData, setresCardData] = useState([])
+
   useEffect(() => {
     const fetch2 = async () => {
       const Data = (
@@ -11,9 +15,14 @@ function Body() {
         )
       ).json();
     };
-    fetch2();
+    
   }, []);
   
+  if(!resCardData.length)
+  {
+    return <ShimmerUi/>
+  }
+
   return (
     <div>
       <div className="Search">search</div>
