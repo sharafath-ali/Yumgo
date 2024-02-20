@@ -6,6 +6,7 @@ import ShimmerUi from "./ShimmerUi";
 
 function Body() {
   const [resCardData, setresCardData] = useState([])
+  const [filteredResCardData, setFilteredResCardData]=useState([])
 
   useEffect(() => {
     const fetch2 = async () => {
