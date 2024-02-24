@@ -26,7 +26,7 @@ function Body() {
 
   return (
     <div>
-      <div className="Search">search</div>
+      <div className="Search"><input onChange={resCardData.data.name.tolowercase}></input>search</div>
       <div className="res-container">
         {[1, 2, 3, 5, 8, 6, 90, 88, 9].map(() => {
           return <RestaurantCard />;
