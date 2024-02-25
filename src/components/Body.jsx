@@ -1,35 +1,42 @@
-import React, { useEffect , useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Body.css";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUi from "./ShimmerUi";
 
 
 function Body() {
-  const [resCardData, setresCardData] = useState([])
-  const [filteredResCardData, setFilteredResCardData]=useState([])
+  const [resCardData, setresCardData] = useState()
+  const [filteredResCardData, setFilteredResCardData] = useState([])
+  const [isLoading ,setLoading]= useState()
 
   useEffect(() => {
-    const fetch2 = async () => {
-      const Data = (
-        await fetch(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0153848&lng=76.3420206&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        )
-      ).json();
-    };
-    
+    fetchData()
   }, []);
-  
-  if(!resCardData.length)
-  {
-    return <ShimmerUi/>
+
+  const fetchData = async () => {
+    setLoading(true)
+    const data = 
+      await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0153848&lng=76.3420206&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      )
+    let Data = await data.json();
+    console.log()
+    setresCardData(Data.data.cards[4].card.card.gridElements.infoWithStyle
+      .
+      restaurants);
+    setLoading(false)
+  };
+
+  if (isLoading) {
+    return <ShimmerUi />
   }
 
   return (
     <div>
-      <div className="Search"><input onChange={resCardData.data.name.tolowercase}></input>search</div>
+      <div className="Search"><input ></input>search</div>
       <div className="res-container">
-        {[1, 2, 3, 5, 8, 6, 90, 88, 9].map(() => {
-          return <RestaurantCard />;
+        {resCardData?.map((e) => {
+          return <RestaurantCard e={e}/>;
         })}
       </div>
     </div>
